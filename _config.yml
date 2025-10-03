@@ -19,8 +19,8 @@ description: >-
   We introduce AutoBot, a framework that accurately identifies and localizes deceptive patterns 
   from website screenshots without relying on HTML code. AutoBot achieves an F1-score of 0.93 
   in detecting deceptive patterns, offering essential tools for users, developers, and regulators.
-baseurl: ""
-url: "https://asmit-nayak.github.io"
+baseurl: "/deceptive-pattern-paper"
+url: "https://wi-pi.github.io"
 twitter_username: asmitnayak
 github_username: asmit-nayak
 

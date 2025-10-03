@@ -25,7 +25,7 @@ bibtex: |
 
 [//]: # (<div class="project-figure">)
 
-[//]: # (  <img src="/assets/images/autobot-teaser.svg" alt="AutoBot Framework Overview">)
+[//]: # (  <img src="{{ '/assets/images/autobot-teaser.svg' | relative_url }}" alt="AutoBot Framework Overview">)
 
 [//]: # (  <figcaption>AutoBot accurately identifies and localizes deceptive patterns from website screenshots, providing real-time feedback to users, developers, and regulators.</figcaption>)
 
@@ -47,7 +47,7 @@ bibtex: |
 ## The AutoBot Framework
 
 <div class="project-figure">
-  <img src="/assets/images/system_overview.jpg" alt="AutoBot Two-Stage Pipeline">
+  <img src="{{ '/assets/images/system_overview.jpg' | relative_url }}" alt="AutoBot Two-Stage Pipeline">
   <figcaption>AutoBot's two-stage pipeline: (1) Vision Module to localize UI elements and extract features, (2) Language Module to detect deceptive patterns.</figcaption>
 </div>
 
@@ -83,7 +83,7 @@ AutoBot achieves state-of-the-art results on the task of deceptive pattern detec
 ### Comparison with State-of-the-Art Models
 
 <div class="project-figure">
-  <img src="/assets/images/comparison-chart.svg" alt="Performance Comparison">
+  <img src="{{ '/assets/images/comparison-chart.svg' | relative_url }}" alt="Performance Comparison">
   <figcaption>AutoBot outperforms existing approaches including GPT-4, Gemini, and heuristic-based methods in detecting deceptive patterns across multiple categories.</figcaption>
 </div>
 
@@ -130,7 +130,7 @@ Concealing or delaying disclosure of important information.
 ### 1. Browser Extension for Users
 
 <div class="project-figure">
-  <img src="/assets/images/browser-extension.svg" alt="AutoBot Browser Extension">
+  <img src="{{ '/assets/images/browser-extension.svg' | relative_url }}" alt="AutoBot Browser Extension">
   <figcaption>Real-time browser extension that highlights deceptive patterns as users browse the web, providing instant feedback and explanations.</figcaption>
 </div>
 
@@ -139,7 +139,7 @@ A local browser extension provides users with real-time feedback, highlighting d
 ### 2. Lighthouse Audit for Developers
 
 <div class="project-figure">
-  <img src="/assets/images/lighthouse-audit.svg" alt="Lighthouse Audit Integration">
+  <img src="{{ '/assets/images/lighthouse-audit.svg' | relative_url }}" alt="Lighthouse Audit Integration">
   <figcaption>Custom Lighthouse audit that helps developers identify and fix potential deceptive patterns during the development process.</figcaption>
 </div>
 
@@ -148,7 +148,7 @@ Our custom Lighthouse audit integrates directly into developer workflows, provid
 ### 3. Measurement Tool for Researchers
 
 <div class="project-figure">
-  <img src="/assets/images/measurement-tool.svg" alt="Large-Scale Measurement">
+  <img src="{{ '/assets/images/measurement-tool.svg' | relative_url }}" alt="Large-Scale Measurement">
   <figcaption>Large-scale measurement capabilities enable researchers and regulators to analyze deceptive pattern prevalence across thousands of websites.</figcaption>
 </div>
 
@@ -157,7 +157,7 @@ AutoBot serves as a large-scale measurement tool for researchers and regulators,
 ## User Study Findings
 
 <div class="project-figure">
-  <img src="/assets/images/user-study.svg" alt="User Study Results">
+  <img src="{{ '/assets/images/user-study.svg' | relative_url }}" alt="User Study Results">
   <figcaption>User study results showing that AutoBot's highlighting improves user awareness without negatively impacting website usability (p=0.106).</figcaption>
 </div>
 
