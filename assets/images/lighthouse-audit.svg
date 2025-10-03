@@ -1,0 +1,31 @@
+<svg width="700" height="500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="700" height="500" fill="#ffffff"/>
+  
+  <!-- Lighthouse header -->
+  <text x="350" y="40" font-family="Arial, sans-serif" font-size="24" fill="#1a202c" text-anchor="middle" font-weight="bold">Lighthouse Audit - Deceptive Patterns</text>
+  
+  <!-- Score gauge -->
+  <circle cx="350" cy="150" r="80" fill="none" stroke="#e2e8f0" stroke-width="12"/>
+  <circle cx="350" cy="150" r="80" fill="none" stroke="#f59e0b" stroke-width="12" stroke-dasharray="377" stroke-dashoffset="94" transform="rotate(-90 350 150)"/>
+  <text x="350" y="160" font-family="Arial, sans-serif" font-size="48" fill="#1a202c" text-anchor="middle" font-weight="bold">75</text>
+  <text x="350" y="190" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Ethics Score</text>
+  
+  <!-- Findings -->
+  <text x="50" y="270" font-family="Arial, sans-serif" font-size="18" fill="#1a202c" font-weight="bold">Detected Patterns</text>
+  
+  <!-- Pattern 1 -->
+  <rect x="50" y="290" width="600" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="6"/>
+  <text x="70" y="312" font-family="Arial, sans-serif" font-size="14" fill="#78350f" font-weight="bold">⚠ Nudge</text>
+  <text x="70" y="330" font-family="Arial, sans-serif" font-size="12" fill="#92400e">Cookie consent: "Accept" button more prominent than "Reject"</text>
+  
+  <!-- Pattern 2 -->
+  <rect x="50" y="355" width="600" height="50" fill="#fee2e2" stroke="#ef4444" stroke-width="1" rx="6"/>
+  <text x="70" y="377" font-family="Arial, sans-serif" font-size="14" fill="#7f1d1d" font-weight="bold">❌ Pre-selection</text>
+  <text x="70" y="395" font-family="Arial, sans-serif" font-size="12" fill="#991b1b">Newsletter subscription checkbox is pre-checked at signup</text>
+  
+  <!-- Recommendations -->
+  <text x="50" y="440" font-family="Arial, sans-serif" font-size="16" fill="#1a202c" font-weight="bold">Recommendations</text>
+  <text x="70" y="465" font-family="Arial, sans-serif" font-size="12" fill="#4a5568">• Make consent buttons equally prominent</text>
+  <text x="70" y="485" font-family="Arial, sans-serif" font-size="12" fill="#4a5568">• Remove pre-selection from optional subscriptions</text>
+</svg>
+

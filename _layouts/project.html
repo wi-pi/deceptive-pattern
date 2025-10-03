@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/project.css">
+    
+    <!-- Fonts -->
+</head>
+<body>
+    <!-- Main Content -->
+    <main class="project-main">
+        <div class="project-container">
+            <!-- Header -->
+            <div class="project-header">
+                <h1 class="project-title">{{ page.title }}</h1>
+                
+                {% if page.authors %}
+                <div class="project-authors">
+                    {{ page.authors }}
+                </div>
+                {% endif %}
+
+                {% if page.affiliation %}
+                <div class="project-affiliation">
+                    {{ page.affiliation }}
+                </div>
+                {% endif %}
+
+                {% if page.venue %}
+                <div class="project-venue">
+                    {{ page.venue }}
+                </div>
+                {% endif %}
+
+                {% if page.equal_contribution %}
+                <div class="equal-contribution">
+                    {{ page.equal_contribution }}
+                </div>
+                {% endif %}
+
+                <!-- Links -->
+                <div class="project-links">
+                    {% if page.paper_url and page.paper_url != "" %}
+                    <a href="{{ page.paper_url }}" class="btn btn-primary" target="_blank">Paper</a>
+                    {% endif %}
+                    {% if page.code_url and page.code_url != "" %}
+                    <a href="{{ page.code_url }}" class="btn btn-outline" target="_blank">Code</a>
+                    {% endif %}
+                    {% if page.arxiv_url and page.arxiv_url != "" %}
+                    <a href="{{ page.arxiv_url }}" class="btn btn-outline" target="_blank">arXiv</a>
+                    {% endif %}
+                    {% if page.dataset_url and page.dataset_url != "" %}
+                    <a href="{{ page.dataset_url }}" class="btn btn-outline" target="_blank">🤗 Dataset</a>
+                    {% endif %}
+                    {% if page.demo_url and page.demo_url != "" %}
+                    <a href="{{ page.demo_url }}" class="btn btn-outline" target="_blank">Demo</a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="project-content">
+                {{ content }}
+            </div>
+
+            <!-- Citation -->
+            {% if page.bibtex %}
+            <div class="project-citation">
+                <h2>BibTeX</h2>
+                <div class="bibtex-container">
+                    <button class="copy-btn" onclick="copyBibtex()">Copy</button>
+                    <pre><code id="bibtex-code">{{ page.bibtex }}</code></pre>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="project-footer">
+        <div class="container">
+            <p>This page was built using Jekyll. The design is inspired by modern academic project pages.</p>
+            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}. This website is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyBibtex() {
+            const bibtexCode = document.getElementById('bibtex-code').textContent;
+            navigator.clipboard.writeText(bibtexCode).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
+

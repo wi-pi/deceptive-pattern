@@ -1,0 +1,40 @@
+<svg width="700" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="700" height="400" fill="#ffffff"/>
+  
+  <text x="350" y="35" font-family="Arial, sans-serif" font-size="20" fill="#1a202c" text-anchor="middle" font-weight="bold">User Study Results (N=120)</text>
+  
+  <!-- Chart 1: Awareness -->
+  <text x="170" y="80" font-family="Arial, sans-serif" font-size="15" fill="#1a202c" text-anchor="middle" font-weight="bold">Pattern Awareness</text>
+  <rect x="50" y="100" width="240" height="220" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1" rx="6"/>
+  
+  <!-- Bars for awareness -->
+  <rect x="70" y="280" width="80" height="20" fill="#e2e8f0" rx="3"/>
+  <text x="110" y="295" font-family="Arial, sans-serif" font-size="11" fill="#4a5568" text-anchor="middle">Without</text>
+  <text x="110" y="265" font-family="Arial, sans-serif" font-size="14" fill="#1a202c" text-anchor="middle" font-weight="bold">23%</text>
+  <rect x="70" y="120" width="80" height="180" fill="#e2e8f0" rx="3"/>
+  
+  <rect x="180" y="135" width="80" height="165" fill="#3182ce" rx="3"/>
+  <text x="220" y="295" font-family="Arial, sans-serif" font-size="11" fill="#4a5568" text-anchor="middle">With AutoBot</text>
+  <text x="220" y="120" font-family="Arial, sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">89%</text>
+  
+  <!-- Chart 2: Usability Impact -->
+  <text x="520" y="80" font-family="Arial, sans-serif" font-size="15" fill="#1a202c" text-anchor="middle" font-weight="bold">Usability Impact</text>
+  <rect x="400" y="100" width="240" height="220" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1" rx="6"/>
+  
+  <!-- Bars for usability -->
+  <rect x="420" y="195" width="80" height="105" fill="#e2e8f0" rx="3"/>
+  <text x="460" y="295" font-family="Arial, sans-serif" font-size="11" fill="#4a5568" text-anchor="middle">Baseline</text>
+  <text x="460" y="180" font-family="Arial, sans-serif" font-size="14" fill="#1a202c" text-anchor="middle" font-weight="bold">7.2/10</text>
+  <rect x="420" y="120" width="80" height="180" fill="#e2e8f0" rx="3"/>
+  
+  <rect x="530" y="207" width="80" height="93" fill="#10b981" rx="3"/>
+  <text x="570" y="295" font-family="Arial, sans-serif" font-size="11" fill="#4a5568" text-anchor="middle">With AutoBot</text>
+  <text x="570" y="192" font-family="Arial, sans-serif" font-size="14" fill="#065f46" text-anchor="middle" font-weight="bold">6.9/10</text>
+  
+  <!-- Statistical note -->
+  <text x="520" y="340" font-family="Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-style="italic">p=0.106 (not significant)</text>
+  
+  <!-- Key findings -->
+  <text x="350" y="375" font-family="Arial, sans-serif" font-size="13" fill="#059669" text-anchor="middle" font-weight="bold">✓ 86% found AutoBot helpful • No negative impact on usability</text>
+</svg>
+

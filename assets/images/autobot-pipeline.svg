@@ -1,0 +1,30 @@
+<svg width="900" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="300" fill="#ffffff"/>
+  
+  <!-- Stage 1: Vision Module -->
+  <rect x="20" y="50" width="380" height="200" fill="#eff6ff" stroke="#3182ce" stroke-width="2" rx="8"/>
+  <text x="210" y="80" font-family="Arial, sans-serif" font-size="18" fill="#1e40af" text-anchor="middle" font-weight="bold">Stage 1: Vision Module</text>
+  <text x="210" y="110" font-family="Arial, sans-serif" font-size="13" fill="#3b82f6" text-anchor="middle">• Screenshot Analysis</text>
+  <text x="210" y="135" font-family="Arial, sans-serif" font-size="13" fill="#3b82f6" text-anchor="middle">• UI Element Localization</text>
+  <text x="210" y="160" font-family="Arial, sans-serif" font-size="13" fill="#3b82f6" text-anchor="middle">• Text Extraction</text>
+  <text x="210" y="185" font-family="Arial, sans-serif" font-size="13" fill="#3b82f6" text-anchor="middle">• Visual Feature Analysis</text>
+  <text x="210" y="220" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" font-style="italic">YOLOv10 + OCR</text>
+  
+  <!-- Arrow -->
+  <path d="M 410 150 L 490 150" stroke="#6b7280" stroke-width="3" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+  
+  <!-- Stage 2: Language Module -->
+  <rect x="500" y="50" width="380" height="200" fill="#f0fdf4" stroke="#10b981" stroke-width="2" rx="8"/>
+  <text x="690" y="80" font-family="Arial, sans-serif" font-size="18" fill="#065f46" text-anchor="middle" font-weight="bold">Stage 2: Language Module</text>
+  <text x="690" y="110" font-family="Arial, sans-serif" font-size="13" fill="#10b981" text-anchor="middle">• Context Understanding</text>
+  <text x="690" y="135" font-family="Arial, sans-serif" font-size="13" fill="#10b981" text-anchor="middle">• Pattern Classification</text>
+  <text x="690" y="160" font-family="Arial, sans-serif" font-size="13" fill="#10b981" text-anchor="middle">• Confidence Scoring</text>
+  <text x="690" y="185" font-family="Arial, sans-serif" font-size="13" fill="#10b981" text-anchor="middle">• Explanation Generation</text>
+  <text x="690" y="220" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle" font-style="italic">T5-Large / GPT-4</text>
+</svg>
+

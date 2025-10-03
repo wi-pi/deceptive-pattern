@@ -1,0 +1,19 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#f7fafc"/>
+  <rect x="20" y="20" width="760" height="360" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="400" y="180" font-family="Arial, sans-serif" font-size="24" fill="#4a5568" text-anchor="middle">AutoBot Framework Overview</text>
+  <text x="400" y="220" font-family="Arial, sans-serif" font-size="16" fill="#6b7280" text-anchor="middle">Two-stage pipeline for detecting deceptive patterns</text>
+  <rect x="100" y="250" width="250" height="100" fill="#eff6ff" stroke="#3182ce" stroke-width="2" rx="8"/>
+  <text x="225" y="295" font-family="Arial, sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">Vision Module</text>
+  <text x="225" y="320" font-family="Arial, sans-serif" font-size="12" fill="#3b82f6" text-anchor="middle">UI Element Detection</text>
+  <rect x="450" y="250" width="250" height="100" fill="#f0fdf4" stroke="#10b981" stroke-width="2" rx="8"/>
+  <text x="575" y="295" font-family="Arial, sans-serif" font-size="14" fill="#065f46" text-anchor="middle" font-weight="bold">Language Module</text>
+  <text x="575" y="320" font-family="Arial, sans-serif" font-size="12" fill="#10b981" text-anchor="middle">Context Analysis</text>
+  <path d="M 350 300 L 450 300" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+</svg>
+

@@ -1,0 +1,76 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+title: "AutoBot: Automatically Detecting Online Deceptive Patterns"
+email: asmit@cs.wisc.edu
+description: >-
+  We introduce AutoBot, a framework that accurately identifies and localizes deceptive patterns 
+  from website screenshots without relying on HTML code. AutoBot achieves an F1-score of 0.93 
+  in detecting deceptive patterns, offering essential tools for users, developers, and regulators.
+baseurl: ""
+url: "https://asmit-nayak.github.io"
+twitter_username: asmitnayak
+github_username: asmit-nayak
+
+# Author information
+author:
+  name: "Asmit Nayak"
+  email: "asmit@cs.wisc.edu"
+  bio: "PhD Student at University of Wisconsin-Madison, researching web security and privacy"
+  avatar: "/assets/images/asmit.jpg"
+
+# Social links
+social:
+  - name: "GitHub"
+    url: "https://github.com/asmit-nayak"
+  - name: "Twitter"
+    url: "https://twitter.com/asmitnayak"
+  - name: "arXiv"
+    url: "https://arxiv.org/abs/2411.07441"
+
+# Build settings
+theme: null
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "project"
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
