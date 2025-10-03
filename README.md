@@ -1,6 +1,6 @@
-# Deceptive Paper - Modern Jekyll Research Website
+# Deceptive Pattern Paper
 
-A modern, responsive Jekyll-based website inspired by the [Nerfies website](https://nerfies.github.io/), designed for showcasing academic research, publications, and projects.
+A Jekyll-based research website for showcasing academic research on deceptive patterns in web interfaces.
 
 ## Features
 
@@ -24,8 +24,8 @@ A modern, responsive Jekyll-based website inspired by the [Nerfies website](http
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/deceptive-paper.git
-   cd deceptive-paper
+   git clone https://github.com/wi-pi/deceptive-pattern-paper.git
+   cd deceptive-pattern-paper
    ```
 
 2. **Install dependencies**:
@@ -192,7 +192,11 @@ assets/images/
 
 ## Deployment
 
-### GitHub Pages
+### GitHub Pages (Automated with GitHub Actions)
+
+This repository includes a GitHub Actions workflow (`.github/workflows/jekyll.yml`) that automatically builds and deploys the site to GitHub Pages on every push to the `main` branch.
+
+**Setup Steps:**
 
 1. **Push to GitHub**:
    ```bash
@@ -204,11 +208,18 @@ assets/images/
 2. **Enable GitHub Pages**:
    - Go to your repository settings
    - Navigate to "Pages" section
-   - Select "Deploy from a branch"
-   - Choose "main" branch and "/ (root)" folder
+   - Under "Source", select "GitHub Actions"
 
-3. **Your site will be available at**:
-   `https://your-username.github.io/deceptive-paper`
+3. **Automatic Deployment**:
+   - The workflow will automatically trigger on push to `main`
+   - View progress in the "Actions" tab of your repository
+   - Once complete, your site will be live
+
+4. **Your site will be available at**:
+   `https://wi-pi.github.io/deceptive-pattern-paper`
+
+**Manual Deployment:**
+You can also trigger the deployment manually from the "Actions" tab using the workflow dispatch option.
 
 ### Other Hosting Platforms
 
@@ -273,7 +284,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you encounter any issues or have questions:
 
 1. Check the [Jekyll documentation](https://jekyllrb.com/docs/)
-2. Search existing [GitHub issues](https://github.com/your-username/deceptive-paper/issues)
+2. Search existing [GitHub issues](https://github.com/wi-pi/deceptive-pattern-paper/issues)
 3. Create a new issue with detailed information
 
 ## Changelog
@@ -285,3 +296,4 @@ If you encounter any issues or have questions:
 - SEO optimization
 - Mobile-friendly navigation
 - Performance optimizations
+- GitHub Actions workflow for automated deployment
