@@ -16,7 +16,7 @@ bibtex: |
   @article{nayak2025autobot,
     title={Automatically Detecting Online Deceptive Patterns},
     author={Nayak, Asmit and Wani, Yash and Zhang, Shirley and Khandelwal, Rishabh and Fawaz, Kassem},
-    year={2024}
+    year={2025}
   }
 ---
 
