@@ -233,3 +233,13 @@ Future work includes:
 - Expanding the taxonomy to cover emerging deceptive pattern types
 - Improving multilingual support for global deployment
 - Developing automated remediation suggestions for developers -->
+
+## Demo Video
+
+<div class="video-section">
+  <video controls muted loop playsinline preload="auto" autoplay>
+    <source src="{{ '/assets/video/demo.webm' | relative_url }}" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>AutoBot in action: Detection of deceptive patterns on live websites. <a href="{{ page.demo_url }}" target="_blank">Try the interactive demo →</a></figcaption>
+</div>

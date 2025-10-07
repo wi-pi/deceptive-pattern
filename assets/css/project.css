@@ -291,6 +291,52 @@
     .project-content h3 {
         font-size: 1.25rem;
     }
+    
+    .video-section {
+        margin: 2rem auto;
+    }
+    
+    .video-section video {
+        border-radius: 8px;
+    }
+}
+
+/* Video Section */
+.video-section {
+    margin: 3rem auto;
+    text-align: center;
+    max-width: 1000px;
+}
+
+.video-section video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    background: #000;
+}
+
+.video-section figcaption {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.video-section figcaption a {
+    color: #667eea;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.video-section figcaption a:hover {
+    color: #5568d3;
+    transform: translateX(4px);
 }
 
 /* Highlight boxes for key information */

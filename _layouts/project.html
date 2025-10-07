@@ -140,6 +140,31 @@
                 }, 2000);
             });
         }
+
+        // Fix video playback issues
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('.video-section video');
+            if (video) {
+                // Ensure video loads properly
+                video.load();
+                
+                // Try to play when metadata is loaded
+                video.addEventListener('loadedmetadata', function() {
+                    console.log('Video duration:', video.duration);
+                });
+                
+                // Handle play errors
+                video.addEventListener('error', function(e) {
+                    console.error('Video error:', e);
+                });
+                
+                // Ensure loop works properly
+                video.addEventListener('ended', function() {
+                    video.currentTime = 0;
+                    video.play().catch(err => console.log('Play failed:', err));
+                });
+            }
+        });
     </script>
 </body>
 </html>
