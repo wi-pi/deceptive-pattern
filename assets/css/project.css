@@ -72,9 +72,15 @@
 .project-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 14px;
     justify-content: center;
     margin-top: 2rem;
+    align-items: center;
+}
+
+.project-links .btn {
+    min-width: 100px;
+    padding: 10px 20px;
 }
 
 /* Content Section */

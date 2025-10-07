@@ -3,7 +3,7 @@ layout: project
 title: "Automatically Detecting Online Deceptive Patterns"
 authors: '<a href="https://asmitnayak.com" target="_blank">Asmit Nayak</a>, <a href="https://wiscprivacy.com/member/member_yash/" target="_blank">Yash Wani*</a>, <a href="https://www.annienobear.com/" target="_blank">Shirley Zhang</a>*, Rishabh Khandelwal, <a href="https://kassemfawaz.com" target="_blank">Kassem Fawaz</a>'
 affiliation: "University of Wisconsin - Madison"
-venue: "ACM CHI 2025"
+venue: "ACM CCS 2025"
 equal_contribution: "*Indicates Equal Contribution"
 paper_url: "https://arxiv.org/pdf/2411.07441"
 code_url: ""
@@ -13,10 +13,9 @@ demo_url: "https://huggingface.co/spaces/WIPI/DeceptivePatternDetector"
 description: "AutoBot accurately identifies and localizes deceptive patterns from website screenshots without relying on HTML code, achieving an F1-score of 0.93."
 permalink: /
 bibtex: |
-  @article{nayak2024autobot,
+  @article{nayak2025autobot,
     title={Automatically Detecting Online Deceptive Patterns},
-    author={Nayak, Asmit and Zhang, Shirley and Wani, Yash and Khandelwal, Rishabh and Fawaz, Kassem},
-    journal={arXiv preprint arXiv:2411.07441},
+    author={Nayak, Asmit and Wani, Yash and Zhang, Shirley and Khandelwal, Rishabh and Fawaz, Kassem},
     year={2024}
   }
 ---
@@ -38,9 +37,13 @@ bibtex: |
 <div class="abstract">
 <p>We introduce our <strong>AutoBot framework</strong> to address this gap and help web stakeholders navigate and mitigate online deceptive patterns. AutoBot accurately identifies and localizes deceptive patterns from a screenshot of a website without relying on the underlying HTML code. AutoBot employs a two-stage pipeline that leverages the capabilities of specialized vision models to analyze website screenshots, identify interactive elements, and extract textual features. Next, using a large language model, AutoBot understands the context surrounding these elements to determine the presence of deceptive patterns.</p>
 
-<p>We also use AutoBot to create a synthetic dataset to distill knowledge from 'teacher' LLMs to smaller language models. Through extensive evaluation, we demonstrate AutoBot's effectiveness in detecting deceptive patterns on the web, achieving an <strong>F1-score of 0.93</strong> when detecting deceptive patterns, underscoring its potential as an essential tool for mitigating online deceptive patterns.</p>
+<p>We also use AutoBot to create a synthetic dataset to distill knowledge from 'teacher' LLMs to smaller language models. Through extensive evaluation, we demonstrate AutoBot's effectiveness in detecting deceptive patterns on the web, achieving an <strong>F1-score of 0.93</strong> when detecting deceptive patterns, underscoring its potential as an essential tool for mitigating online deceptive patterns. We implement AutoBot across three downstream applications targeting different web stakeholders:</p>
 
-<p>We implement AutoBot across three downstream applications targeting different web stakeholders: **(1)** a local browser extension providing users with real-time feedback, **(2)** a Lighthouse audit to inform developers of potential deceptive patterns on their sites, and **(3)** a measurement tool designed for researchers and regulators.</p>
+<ol>
+<li> A local browser extension providing users with real-time feedback </li>
+<li> A Lighthouse audit to inform developers of potential deceptive patterns on their sites </li>
+<li> A measurement tool designed for researchers and regulators </li>
+</ol>
 </div>
 
 
@@ -51,15 +54,56 @@ bibtex: |
   <figcaption>AutoBot's two-stage pipeline: (1) Vision Module to localize UI elements and extract features, (2) Language Module to detect deceptive patterns.</figcaption>
 </div>
 
-AutoBot adopts a modular design, breaking down the task into two distinct modules:
+AutoBot adopts a modular design, breaking down the task into two distinct modules: a Vision Module for element localization and feature extraction, and a Language Module for deceptive pattern detection. This approach allows AutoBot to work with screenshots alone, without requiring access to the underlying HTML code, which tends to be less stable across different webpage implementations.
 
-1. **Vision Module**: Analyzes screenshots to accurately localize UI elements, extracting essential features including text, visual attributes, and spatial relationships.
+### Vision Module
 
-2. **Language Module**: Leverages large language models to understand the context surrounding these elements and determine the presence of deceptive patterns.
+To address high false positive rates and localization issues, the Vision Module parses a webpage screenshot and maps it to a tabular representation we call *ElementMap*. As illustrated in the figure above, the *ElementMap* contains the text associated with each UI element, along with its features: element type, bounding box coordinates, font size, background color, and font color. For UI element detection, we train a YOLOv10 model on a synthetically generated dataset. The evaluation of our model is presented below.
 
-This approach allows AutoBot to work with screenshots alone, without requiring access to the underlying HTML code, which tends to be less stable across different webpage implementations.
+<div class="project-figure">
+  <div style="display: flex; gap: 20px; justify-content: center; align-items: flex-end;">
+    <div style="width: 48%; display: flex; flex-direction: column; align-items: center;">
+      <img src="{{ '/assets/images/ui-detector.png' | relative_url }}" alt="UI Detector" style="width: 100%;">
+      <figcaption style="margin-top: 10px; font-size: 0.9em; text-align: center;">(a) Synthetic dataset generation pipeline for training the Web-UI Detector</figcaption>
+    </div>
+    <div style="width: 48%; display: flex; flex-direction: column; align-items: center;">
+      <img src="{{ '/assets/images/ccs-2025-vision-eval.png' | relative_url }}" alt="Vision Module Evaluation" style="width: 100%;">
+      <figcaption style="margin-top: 10px; font-size: 0.9em; text-align: center;">(b) Evaluation of YOLO (Ours) vs Molmo across different UI element types</figcaption>
+    </div>
+  </div>
+  <figcaption>The Vision Module processes screenshots to extract UI elements and their features into an <em>ElementMap</em> representation.</figcaption>
+</div>
 
-## Key Results
+### Language Module
+
+The Language Module takes the *ElementMap* as input and maps each element to a deceptive pattern from our taxonomy. This module reasons about each element considering its spatial context and visual features. We explore different instantiations of this module—such as distilling smaller models like Qwen and T5 from a larger teacher model like Gemini—to achieve various trade-offs in terms of cost, need for training, and accuracy.
+
+<div class="project-figure">
+  <img src="{{ '/assets/images/language-module.png' | relative_url }}" alt="Language Module Detection">
+  <figcaption>The Language Module analyzes <em>ElementMap data</em> to identify and classify deceptive patterns in context.</figcaption>
+</div>
+
+## E2E Evaluation
+
+We evaluate AutoBot's end-to-end performance by comparing different instantiations of our Language Module on the task of deceptive pattern detection. The interactive visualization below presents the performance metrics of *AutoBot* using a range of LLM -- Gemini, distilled Qwen-2.5-1.5B and distilled T5-base models. These results demonstrate how different model choices affect detection accuracy, precision, and recall across our deceptive pattern taxonomy.
+
+<div class="project-figure" style="margin: 30px auto !important; text-align: center; display: flex; flex-direction: column; align-items: center;">
+  <iframe src="{{ '/assets/plotly/ccs-2025-llm-eval-category.html' | relative_url }}" 
+          style="width: 100%; max-width:90vw; height: 531px; border: none;" 
+          frameborder="0">
+  </iframe>
+  <figcaption style="max-width:90vw;">Interactive comparison of performance of <em>AutoBot</em>(with three underlying language models: Gemini, Qwen, and T5) at the Category Level.</figcaption>
+</div>
+
+<div class="project-figure" style="margin: 30px auto !important; text-align: center; display: flex; flex-direction: column; align-items: center;">
+  <iframe src="{{ '/assets/plotly/ccs-2025-llm-eval-subtype.html' | relative_url }}" 
+          style="width: 1510px; max-width:90vw; height: 531px; border: none;" 
+          frameborder="0">
+  </iframe>
+  <figcaption style="">Interactive comparison of performance of <em>AutoBot</em>(with three underlying language models: Gemini, Qwen, and T5) and <em>DPGuard</em> at the Subtype Level</figcaption>
+</div>
+
+<!-- ## Key Results
 
 ### Performance Metrics
 
@@ -165,7 +209,7 @@ Our user study with real participants demonstrates that:
 
 - AutoBot's visual highlighting significantly improves user awareness of deceptive patterns
 - The highlighting system does not negatively impact perceived website usability
-- Users appreciate the real-time feedback and find it helpful for making informed decisions
+- Users appreciate the real-time feedback and find it helpful for making informed decisions 
 
 ## Knowledge Distillation
 
@@ -188,4 +232,4 @@ AutoBot represents a significant step forward in combating deceptive patterns on
 Future work includes:
 - Expanding the taxonomy to cover emerging deceptive pattern types
 - Improving multilingual support for global deployment
-- Developing automated remediation suggestions for developers
+- Developing automated remediation suggestions for developers -->
