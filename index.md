@@ -234,7 +234,7 @@ Future work includes:
 - Improving multilingual support for global deployment
 - Developing automated remediation suggestions for developers -->
 
-## Demo Video
+## Demo Video 
 
 <div class="video-section">
   <video controls muted loop playsinline preload="auto" autoplay>
