@@ -14,7 +14,7 @@
 #
 # Site settings
 title: "AutoBot: Automatically Detecting Online Deceptive Patterns"
-email: asmit@cs.wisc.edu
+email: anayak6@wisc.edu
 description: >-
   We introduce AutoBot, a framework that accurately identifies and localizes deceptive patterns 
   from website screenshots without relying on HTML code. AutoBot achieves an F1-score of 0.93 
@@ -27,7 +27,7 @@ github_username: asmit-nayak
 # Author information
 author:
   name: "Asmit Nayak"
-  email: "asmit@cs.wisc.edu"
+  email: "anayak6@wisc.edu"
   bio: "PhD Student at University of Wisconsin-Madison, researching web security and privacy"
   avatar: "/assets/images/asmit.jpg"
 

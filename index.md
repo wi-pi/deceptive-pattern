@@ -1,13 +1,23 @@
 ---
 layout: project
 title: "Automatically Detecting Online Deceptive Patterns"
-authors: '<a href="https://asmitnayak.com" target="_blank">Asmit Nayak</a>, <a href="https://wiscprivacy.com/member/member_yash/" target="_blank">Yash Wani*</a>, <a href="https://www.annienobear.com/" target="_blank">Shirley Zhang</a>*, Rishabh Khandelwal, <a href="https://kassemfawaz.com" target="_blank">Kassem Fawaz</a>'
+authors:
+  - name: '<a href="https://asmitnayak.com" target="_blank">Asmit Nayak</a>'
+    email: "anayak6@wisc.edu"
+  - name: '<a href="https://wiscprivacy.com/member/member_yash/" target="_blank">Yash Wani</a>*'
+    email: "ywani@wisc.edu"
+  - name: '<a href="https://www.annienobear.com/" target="_blank">Shirley Zhang</a>*'
+    email: "hzhang664@wisc.edu"
+  - name: 'Rishabh Khandelwal'
+    email: "rkhandelwal3@wisc.edu"
+  - name: '<a href="https://kassemfawaz.com" target="_blank">Kassem Fawaz</a>'
+    email: "kfawaz@wisc.edu"
 affiliation: "University of Wisconsin - Madison"
 venue: "ACM CCS 2025"
 equal_contribution: "*Indicates Equal Contribution"
 paper_url: "https://arxiv.org/pdf/2411.07441"
 code_url: ""
-arxiv_url: "https://arxiv.org/abs/2411.07441"
+#arxiv_url: "https://arxiv.org/abs/2411.07441"
 dataset_url: ""
 demo_url: "https://huggingface.co/spaces/WIPI/DeceptivePatternDetector"
 description: "AutoBot accurately identifies and localizes deceptive patterns from website screenshots without relying on HTML code, achieving an F1-score of 0.93."
@@ -35,6 +45,27 @@ bibtex: |
 </div>
 
 
+## Why Off-the-Shelf LLMs Fall Short
+
+While state-of-the-art vision-language models show promise in understanding visual content, directly applying them to detect deceptive patterns reveals significant limitations. These models often struggle with hallucination and lack of localization needed to identify deceptive patterns in real-world web interfaces. 
+
+<div class="project-figure">
+  <div style="display: flex; gap: 20px; justify-content: space-evenly; align-items: flex-start; flex-wrap: wrap;">
+    <div style="width: 35%; min-width: 300px; display: flex; flex-direction: column; align-items: center;">
+      <img src="{{ '/assets/images/gemini-failure.jpg' | relative_url }}" alt="Gemini Failure Case" style="width: 100%;">
+      <figcaption style="margin-top: 10px; font-size: 0.9em; text-align: center;">Gemini fails to accurately identify and localize deceptive UI elements</figcaption>
+    </div>
+    <div style="width: 35%; min-width: 300px; display: flex; flex-direction: column; align-items: center;">
+      <img src="{{ '/assets/images/gpt-failure.jpg' | relative_url }}" alt="GPT-4V Failure Case" style="width: 100%;">
+      <figcaption style="margin-top: 10px; font-size: 0.9em; text-align: center;">GPT-4V struggles with precise localization and context understanding</figcaption>
+    </div>
+  </div>
+  <figcaption>Out-of-the-box LLMs demonstrate high false positive rates and poor localization accuracy when detecting deceptive patterns.</figcaption>
+</div>
+
+These limitations motivated us to develop a specialized framework that combines vision and language models in a structured framework, rather than relying on end-to-end models that lack the precision required for this task.
+
+
 ## The AutoBot Framework
 
 <div class="project-figure">
@@ -47,15 +78,21 @@ AutoBot adopts a modular design, breaking down the task into two distinct module
 ### Vision Module
 
 To address high false positive rates and localization issues, the Vision Module parses a webpage screenshot and maps it to a tabular representation we call *ElementMap*. As illustrated in the figure above, the *ElementMap* contains the text associated with each UI element, along with its features: element type, bounding box coordinates, font size, background color, and font color. For UI element detection, we train a YOLOv10 model on a synthetically generated dataset. The evaluation of our model is presented below.
-
-<div class="project-figure">
-  <div style="display: flex; gap: 20px; justify-content: center; align-items: flex-end;">
-    <div style="width: 48%; display: flex; flex-direction: column; align-items: center;">
+<div class="project-figure" style="margin-top: -2rem; margin-bottom: 2rem;">
+  <div class="vision-module-flex" style="display: flex; gap: 20px; justify-content: center; align-items: flex-end;">
+    <div class="vision-module-item" style="width: 48%; display: flex; flex-direction: column; align-items: center;">
       <img src="{{ '/assets/images/ui-detector.png' | relative_url }}" alt="UI Detector" style="width: 100%;">
       <figcaption style="margin-top: 10px; font-size: 0.9em; text-align: center;">(a) Synthetic dataset generation pipeline for training the Web-UI Detector</figcaption>
     </div>
-    <div style="width: 48%; display: flex; flex-direction: column; align-items: center;">
-      <img src="{{ '/assets/images/ccs-2025-vision-eval.png' | relative_url }}" alt="Vision Module Evaluation" style="width: 100%;">
+    <div class="vision-module-item" style="width: 48%; display: flex; flex-direction: column; align-items: center;">
+      <div style="display: flex; justify-content: center; align-items: flex-end; height: 100%;">
+        <div style="width: 1008px; height: 294px; overflow: hidden; display: flex; justify-content: center; align-items: flex-end;">
+          <iframe src="{{ '/assets/plotly/ccs-2025-vision-eval.html' | relative_url }}"
+                  style="width: 1008px; height: 530px; border: none; transform: scale(0.55); transform-origin: center bottom;margin-bottom: -30px"
+                  frameborder="0">
+          </iframe>
+        </div>
+      </div>
       <figcaption style="margin-top: 10px; font-size: 0.9em; text-align: center;">(b) Evaluation of YOLO (Ours) vs Molmo across different UI element types</figcaption>
     </div>
   </div>
@@ -96,7 +133,7 @@ We evaluate AutoBot's end-to-end performance by comparing different instantiatio
 
 <div class="video-section">
   <video controls muted loop playsinline preload="auto" autoplay>
-    <source src="{{ '/assets/video/demo.webm' | relative_url }}" type="video/webm">
+    <source src="{{ '/assets/video/demo_detailed.webm' | relative_url }}" type="video/webm">
     Your browser does not support the video tag.
   </video>
   <figcaption>AutoBot in action: Detection of deceptive patterns on live websites. <a href="{{ page.demo_url }}" target="_blank">Try the interactive demo →</a></figcaption>
