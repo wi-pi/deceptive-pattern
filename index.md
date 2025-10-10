@@ -53,11 +53,11 @@ While state-of-the-art vision-language models show promise in understanding visu
   <div style="display: flex; gap: 20px; justify-content: space-evenly; align-items: flex-start; flex-wrap: wrap;">
     <div style="width: 35%; min-width: 300px; display: flex; flex-direction: column; align-items: center;">
       <img src="{{ '/assets/images/gemini-failure.jpg' | relative_url }}" alt="Gemini Failure Case" style="width: 100%;">
-      <figcaption style="margin-top: 10px; font-size: 0.9em; text-align: center;">Gemini fails to accurately identify and localize deceptive UI elements</figcaption>
+      <figcaption style="margin-top: 10px; font-size: 0.9em; text-align: center;">Gemini hallucinates that the "Accept all cookies" button being more visually prominent than the "Necessary cookies only" one.</figcaption>
     </div>
     <div style="width: 35%; min-width: 300px; display: flex; flex-direction: column; align-items: center;">
       <img src="{{ '/assets/images/gpt-failure.jpg' | relative_url }}" alt="GPT-4V Failure Case" style="width: 100%;">
-      <figcaption style="margin-top: 10px; font-size: 0.9em; text-align: center;">GPT-4V struggles with precise localization and context understanding</figcaption>
+      <figcaption style="margin-top: 10px; font-size: 0.9em; text-align: center;">GPT-4.5 hallucinates that the "Accept all cookies" and "Reject all" button are visually different.</figcaption>
     </div>
   </div>
   <figcaption>Out-of-the-box LLMs demonstrate high false positive rates and poor localization accuracy when detecting deceptive patterns.</figcaption>
