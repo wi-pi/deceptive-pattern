@@ -38,7 +38,7 @@ bibtex: |
 </div>
 
 
-## Why Off-the-Shelf LLMs Fall Short
+## How Off-the-Shelf LLMs Fall Short
 
 While state-of-the-art vision-language models show promise in understanding visual content, directly applying them to detect deceptive patterns reveals significant limitations. These models often struggle with hallucination and lack of localization needed to identify deceptive patterns in real-world web interfaces. 
 
@@ -101,9 +101,32 @@ The Language Module takes the *ElementMap* as input and maps each element to a d
   <figcaption>The Language Module analyzes <em>ElementMap data</em> to identify and classify deceptive patterns in context.</figcaption>
 </div>
 
+## Knowledge Distillation
+
+<div class="project-figure">
+  <div style="display: flex; gap: 30px; align-items: center; flex-wrap: wrap; margin-bottom: 30px;">
+    <div style="flex: 1; min-width: 300px; text-align: left;">
+      <p style="margin-top: 0;">While large language models like Gemini achieve high accuracy in detecting deceptive patterns, using such closed-source models presents its own challenges such as high usage cost, considerable latency and potential data-privacy concerns. To address this, we employ knowledge distillation to create smaller, more efficient models that maintain strong detection performance while being faster and more cost-effective.</p>
+      
+      <p>We leverage <em>AutoBot</em> with Gemini as the underlying language model to label deceptive patterns, we create a large-scale dataset of labeled examples, <code><em>D<sub>distill</sub></em></code>. This synthetic dataset captures the teacher model's, i.e. Gemini's, classification along with it's reasoning for those classifications.</p>
+      
+      <p style="margin-bottom: 0;">Using this dataset, <code><em>D<sub>distill</sub></em></code>, we distill knowledge from the Gemini teacher model into two smaller student models: Qwen-2.5-1.5B and T5-base. The distillation process trains these models to replicate Gemini's pattern detection capabilities by learning from its predictions. This approach enables us to achieve different trade-offs across various metrics such as performance, data privacy, and latency.</p>
+    </div>
+    
+    <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <img src="{{ '/assets/images/distillation.png' | relative_url }}" alt="Knowledge Distillation Pipeline" style="width: 100%; max-width: 500px;">
+      <figcaption style="margin-top: 10px; font-size: 0.9em; text-align: center;">Knowledge distillation pipeline: <em>AutoBot</em> generates a synthetic dataset which is used to distill smaller models.</figcaption>
+    </div>
+  </div>
+  
+  <div style="text-align: center; margin: 30px 0;">
+    <img src="{{ '/assets/images/model-tradeoffs.png' | relative_url }}" alt="Model Trade-offs" style="width: 100%; max-width: 800px;">
+  </div>
+</div>
+
 ## E2E Evaluation
 
-We evaluate AutoBot's end-to-end performance by comparing different instantiations of our Language Module on the task of deceptive pattern detection. The interactive visualization below presents the performance metrics of *AutoBot* using a range of LLM -- Gemini, distilled Qwen-2.5-1.5B and distilled T5-base models. These results demonstrate how different model choices affect detection accuracy, precision, and recall across our deceptive pattern taxonomy.
+To quantify the trade-offs between these three model instantiations, we evaluate *AutoBot*'s end-to-end performance on deceptive pattern detection. The interactive visualizations below compare Gemini, distilled Qwen-2.5-1.5B, and distilled T5-base across our deceptive pattern taxonomy, demonstrating how each model choice affects detection accuracy, precision, and recall at both the category and subtype levels.
 
 <div class="project-figure" style="margin: 30px auto !important; text-align: center; display: flex; flex-direction: column; align-items: center;">
   <iframe src="{{ '/assets/plotly/ccs-2025-llm-eval-category.html' | relative_url }}" 
@@ -118,7 +141,7 @@ We evaluate AutoBot's end-to-end performance by comparing different instantiatio
           style="width: 1510px; max-width:90vw; height: 531px; border: none;" 
           frameborder="0">
   </iframe>
-  <figcaption style="">Interactive comparison of performance of <em>AutoBot</em>(with three underlying language models: Gemini, Qwen, and T5) and <em>DPGuard</em> at the Subtype Level</figcaption>
+  <figcaption style="">Interactive comparison of performance of <em>AutoBot</em>(with three underlying language models: Gemini, Qwen, and T5) and <em><a href="https://dl.acm.org/doi/10.1145/3696410.3714593" target="_blank">DPGuard</a></em> at the Subtype Level</figcaption>
 </div>
 
 
