@@ -33,15 +33,8 @@ bibtex: |
 ## Abstract
 
 <div class="abstract">
-<p>We introduce our <strong>AutoBot framework</strong> to address this gap and help web stakeholders navigate and mitigate online deceptive patterns. AutoBot accurately identifies and localizes deceptive patterns from a screenshot of a website without relying on the underlying HTML code. AutoBot employs a two-stage pipeline that leverages the capabilities of specialized vision models to analyze website screenshots, identify interactive elements, and extract textual features. Next, using a large language model, AutoBot understands the context surrounding these elements to determine the presence of deceptive patterns.</p>
-
-<p>We also use AutoBot to create a synthetic dataset to distill knowledge from 'teacher' LLMs to smaller language models. Through extensive evaluation, we demonstrate AutoBot's effectiveness in detecting deceptive patterns on the web, achieving an <strong>F1-score of 0.93</strong> when detecting deceptive patterns, underscoring its potential as an essential tool for mitigating online deceptive patterns. We implement AutoBot across three downstream applications targeting different web stakeholders:</p>
-
-<ol>
-<li> A local browser extension providing users with real-time feedback </li>
-<li> A Lighthouse audit to inform developers of potential deceptive patterns on their sites </li>
-<li> A measurement tool designed for researchers and regulators </li>
-</ol>
+<p>Deceptive patterns in digital interfaces manipulate users into making unintended decisions, exploiting cognitive biases and psychological vulnerabilities. These patterns have become ubiquitous on various digital platforms. While efforts to mitigate deceptive patterns have emerged from legal and technical perspectives, a significant gap remains in creating usable and scalable solutions. We introduce our <strong>AutoBot framework</strong> to address this gap and help web stakeholders navigate and mitigate online deceptive patterns. <em><strong>AutoBot</strong></em> accurately identifies and localizes deceptive patterns from a screenshot of a website without relying on the underlying HTML code. <em><strong>AutoBot</strong></em> employs a two-stage pipeline that leverages the capabilities of specialized vision models to analyze website screenshots, identify interactive elements, and extract textual features. Next, using a large language model, <em><strong>AutoBot</strong></em> understands the context surrounding these elements to determine the presence of deceptive patterns. We also use <em><strong>AutoBot</strong></em>, to create a synthetic dataset to distill knowledge from ‘teacher’ LLMs to smaller language models. Through extensive evaluation, we demonstrate <em><strong>AutoBot</strong></em>’s effectiveness in detecting deceptive patterns on the web, achieving an F1-score of 0.93 in this task, underscoring its potential as an essential tool for mitigating online deceptive patterns.</p>
+<p>We implement <em><strong>AutoBot</strong></em>, across three downstream applications targeting different web stakeholders: (1) a local browser extension providing users with real-time feedback, (2) a Lighthouse audit to inform developers of potential deceptive patterns on their sites, and (3) as a measurement tool for researchers and regulators.</p>
 </div>
 
 
