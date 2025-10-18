@@ -21,6 +21,7 @@ code_url: ""
 #arxiv_url: "https://arxiv.org/abs/2411.07441"
 dataset_url: ""
 demo_url: "https://huggingface.co/spaces/WIPI/DeceptivePatternDetector"
+slides_url: "/assets/slides/ccs_2025.pptx"
 description: "AutoBot accurately identifies and localizes deceptive patterns from website screenshots without relying on HTML code, achieving an F1-score of 0.93."
 permalink: /
 bibtex: |
