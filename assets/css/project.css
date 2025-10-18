@@ -49,7 +49,7 @@
     font-weight: 400;
     font-size: 1.5rem;
     text-align: center;
-    margin-top: 1rem;
+    /*margin-top: 0.4rem;*/
     /* margin-bottom: 1.5rem; */
 }
 
@@ -98,7 +98,7 @@
     font-size: 1.25rem;
     font-weight: 600;
     color: #2d3748;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 /* Tooltip for equal contribution indicator */
@@ -144,7 +144,7 @@
     flex-wrap: wrap;
     gap: 14px;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 1.4rem;
     align-items: center;
 }
 

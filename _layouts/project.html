@@ -42,12 +42,6 @@
                 </div>
                 {% endif %}
 
-                {% if page.award %}
-                <div class="project-award">
-                    <span class="award-emoji">🏆</span> <span class="award-text">CCS 2025 Distinguished Paper Award</span>
-                </div>
-                {% endif %}
-
                 {% if page.affiliation %}
                 <div class="project-affiliation">
                     {{ page.affiliation }}
@@ -57,6 +51,12 @@
                 {% if page.venue %}
                 <div class="project-venue">
                     {{ page.venue }}
+                </div>
+                {% endif %}
+
+                {% if page.award %}
+                <div class="project-award">
+                    <span class="award-emoji">🏆</span> <span class="award-text">CCS 2025 Distinguished Paper Award</span>
                 </div>
                 {% endif %}
 
