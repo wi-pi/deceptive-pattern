@@ -42,12 +42,31 @@
     color: #1a202c;
 }
 
+/* Award Styles */
+.project-award {
+    display: block;
+    color: #d97706;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
+    /* margin-bottom: 1.5rem; */
+}
+
+.project-award .award-emoji {
+    font-style: normal;
+}
+
+.project-award .award-text {
+    font-style: italic;
+}
+
 .project-authors-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .author-block {
@@ -72,7 +91,7 @@
 .project-affiliation {
     font-size: 1.3rem;
     color: #4a5568;
-    margin-bottom: 0.75rem;
+    /* margin-bottom: 0.3rem; */
 }
 
 .project-venue {
@@ -82,12 +101,42 @@
     margin-bottom: 0.5rem;
 }
 
-.equal-contribution {
-    font-size: 0.9rem;
-    color: #6b7280;
-    font-style: italic;
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
+/* Tooltip for equal contribution indicator */
+.equal-contrib-indicator {
+    cursor: help;
+    position: relative;
+    color: inherit;
+}
+
+.equal-contrib-indicator:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background-color: #2d3748;
+    color: white;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    border-radius: 4px;
+    z-index: 1000;
+    margin-top: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+}
+
+.equal-contrib-indicator:hover::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-bottom-color: #2d3748;
+    margin-top: 1px;
+    z-index: 999;
+    pointer-events: none;
 }
 
 .project-links {

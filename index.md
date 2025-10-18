@@ -14,6 +14,7 @@ authors:
     email: "kfawaz@wisc.edu"
 affiliation: "University of Wisconsin - Madison"
 venue: "ACM CCS 2025"
+award: "🏆 Distinguished Paper Award"
 equal_contribution: "*Indicates Equal Contribution"
 paper_url: "https://arxiv.org/pdf/2411.07441"
 code_url: ""
